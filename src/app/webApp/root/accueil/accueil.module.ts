@@ -14,6 +14,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
   ],
   imports: [
     CommonModule
+  ],
+  exports : [
+    LandingPageComponent
   ]
 })
 export class AccueilModule { }
