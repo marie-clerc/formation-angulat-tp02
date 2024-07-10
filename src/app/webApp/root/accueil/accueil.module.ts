@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { FormsModule } from '@angular/forms';
 import { DivesModule } from '../dives/dives.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DivesModule } from '../dives/dives.module';
     // 1 des composantse module (cette partie de l'appli)
     // utilise une directive des formulaires angular
     FormsModule,
+    RouterModule,
     // nos propres modules
     DivesModule
   ],
