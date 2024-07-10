@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, viewChild } from '@angular/core';
 import { DivesService } from '../../../../../shared/services/dives.service';
 import { Dives } from '../../../../../shared/class/dives';
 import { Meta, Title } from '@angular/platform-browser';
@@ -9,12 +9,14 @@ import { Subscription } from 'rxjs';
   templateUrl: './dives-list.component.html',
   styleUrl: './dives-list.component.scss'
 })
-export class DivesListComponent implements OnInit, OnDestroy {
+export class DivesListComponent implements OnInit, OnDestroy, AfterViewInit, AfterViewChecked {
   // 1- props
   public dives:Dives[] = [];
 
   private subData:Subscription = new Subscription();
 
+  @ViewChild('btnPlus') eltBtn!:ElementRef<HTMLElement>
+  // @ViewChild('btnPlus') eltBtn!:ElementRef<HTMLButtonElement>;
 
   // 2- const
   // injection de dépendances :
@@ -33,11 +35,10 @@ export class DivesListComponent implements OnInit, OnDestroy {
     ])
   }
 
-
   // cycles de vie 
   ngOnInit(): void {
     // Rôle : chargement ou l'init des DATA
-    console.warn('Oninit');
+    console.warn('Oninit : ', this.eltBtn); //Undefined 
     console.table(this._service.getDives())
     // this.dives = this._service.getDives()
 
@@ -56,6 +57,20 @@ export class DivesListComponent implements OnInit, OnDestroy {
     window.alert('Comp Destroy');
     this.subData.unsubscribe();
   }
+  // -------------
 
+  ngAfterViewInit(): void {
+    // il est appelé une seule fois lors du 1er chargement du template html
+    // a besoin de décorateur particulier comme ViewChild pour fonctionner
+    console.warn('AfterViewInit : ', this.eltBtn);
+    // output : Undefined (fond1.jpg === 400ms)
+  }
+
+  ngAfterViewChecked(): void {
+    // est appelé plusieurs fois
+    // CHANGE DETECTION mODE
+    console.warn('AfterViewChecked : ', this.eltBtn);
+    
+  }
   // 4- méthodes
 }
