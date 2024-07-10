@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
-
+  // propriétés
+ 
+  public codeCours:string='NG';
+ 
+  public result:string='';
+ 
+  // méthodes
+  public methodClic(){
+    this.result='Vous avez cliqué !';
+  } 
 }
