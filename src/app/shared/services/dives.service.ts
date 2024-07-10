@@ -34,12 +34,14 @@ export class DivesService {
           
         }
       ),
-      delay(4000),
+      // delay(4000),
       map(
         (data:Dives[]) => {
           return data.filter(
             (datum:Dives) => {
-              return datum.id >=3;
+              // return datum.id >=3;
+              return datum.id >=0;
+            
             }
           )
         }
