@@ -36,7 +36,14 @@ export class DivesListComponent implements OnInit {
     // Rôle : chargement ou l'init des DATA
     console.warn('Oninit');
     console.table(this._service.getDives())
-    this.dives = this._service.getDives()
+    // this.dives = this._service.getDives()
+
+    this._service.getDives().subscribe(
+      (data:Dives[]) => {
+        console.log(data);
+        this.dives = data;
+      }
+    )
   }
 
 
