@@ -1,1 +1,19 @@
-<h3 class="alert alert-primary">Liste des plongées</h3> 
+<h2 class="alert alert-primary">Liste des Plongées</h2>
+ 
+<div class="row">
+ 
+    <div class="col-md-3" *ngFor="let dive of dives">
+        <div class="card">          
+            <img src="{{dive.photo}}" class="card-img-top">
+            <div class="card-body">
+                <h3 class="card-title">Nom : {{dive.name}}</h3>
+                <p class="card-text">Description : {{dive.description}}</p>                
+                <button class="btn btn-primary" #btnPlus>En Savoir Plus</button>
+            </div>
+        </div>
+    </div>
+   
+ 
+ 
+ 
+</div>

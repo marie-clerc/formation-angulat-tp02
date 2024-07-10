@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DivesService } from '../../../../../shared/services/dives.service';
 
 @Component({
@@ -6,8 +6,10 @@ import { DivesService } from '../../../../../shared/services/dives.service';
   templateUrl: './dives-list.component.html',
   styleUrl: './dives-list.component.scss'
 })
-export class DivesListComponent {
+export class DivesListComponent implements OnInit {
   // 1- props
+  public dives:any[] = [];
+
 
   // 2- const
   // injection de dépendances :
@@ -16,8 +18,19 @@ export class DivesListComponent {
   constructor (
     private _service:DivesService
   ){
-    
+    console.warn('Constructor');
+
   }
 
-  // 3- méthodes
+
+  // cycles de vie 
+  ngOnInit(): void {
+    // Rôle : chargement ou l'init des DATA
+    console.warn('Oninit');
+    console.table(this._service.getDives())
+    this.dives = this._service.getDives()
+  }
+
+
+  // 4- méthodes
 }
