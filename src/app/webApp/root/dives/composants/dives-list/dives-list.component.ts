@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DivesService } from '../../../../../shared/services/dives.service';
+import { Dives } from '../../../../../shared/class/dives';
 
 @Component({
   selector: 'app-dives-list',
@@ -8,7 +9,7 @@ import { DivesService } from '../../../../../shared/services/dives.service';
 })
 export class DivesListComponent implements OnInit {
   // 1- props
-  public dives:any[] = [];
+  public dives:Dives[] = [];
 
 
   // 2- const

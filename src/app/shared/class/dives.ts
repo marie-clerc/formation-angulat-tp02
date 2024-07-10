@@ -1,7 +1,5 @@
 export class Dives {
- 
     // props
- 
     public id!:number; // ! obligatoire
     public name!:string;
     public location!:string;

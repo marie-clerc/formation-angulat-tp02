@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Dives } from '../class/dives';
 
 // décorateur 
 @Injectable({
@@ -8,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class DivesService {
  // le rôle : faire une requête HTTPClient (GET)
  // 1- Props
-  private dives:any[]=[];
+  private dives:Dives[] =[];
 
  // 2- constructor
   constructor() {
