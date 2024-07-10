@@ -34,7 +34,7 @@
    
       </div>
       
-<p>autre solution de code</p>
+<p>autre solution de code avec switchCase</p>
 
 <div [ngSwitch]="codeCours">
     <div *ngSwitchCase="'NG'">Angular</div>
@@ -43,5 +43,18 @@
     <div *ngSwitchDefault="">Choisir une formation</div>
 </div>
 
-<!-- Double way Binding -->
+<!-- Double way Binding
+ HTML ==> TS ==> HTML -->
+
+ <!-- [] : directives Single Way Binding (TS => HTML )-->
+<!--  ngModel appartient aux forms Angular -->
+<p>Double way binding ici: </p>  
+<select class="form-control" [(ngModel)]="codeCours">
+    <!-- double way binding a un nom : Banana in a box [()] -->
+    <option value="">Choisir pour tester le double way binding</option>
+   
+    <option value="NG">Angular ...</option>
+    <option value="REACT">React ...</option>
+    <option value="VUE">Vue ...</option>
+</select>
 </div>
