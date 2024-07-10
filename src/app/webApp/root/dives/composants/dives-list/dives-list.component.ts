@@ -60,7 +60,7 @@ export class DivesListComponent implements OnInit, OnDestroy, AfterViewInit, Aft
   // -------------
 
   ngOnDestroy(): void {
-    window.alert('Comp Destroy');
+    // window.alert('Comp Destroy');
     this.subData.unsubscribe();
   }
   // -------------
