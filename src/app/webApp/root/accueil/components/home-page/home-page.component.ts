@@ -10,7 +10,7 @@ export class HomePageComponent {
  
   public codeCours:string='NG';
  
-  public result:string='';
+  public result:string='ok';
  
   // méthodes
   public methodClic(){

@@ -1,10 +1,47 @@
 <div class="alert alert-primary">
     <h3>HOME PAGE</h3>
  
+    <!-- single way binding : HTML => TS -->
     <button class="btn btn-primary" (click)="methodClic()">
         Cliquez pour tester le single way binding...
     </button>
-    <p>{{result}}</p>
+
+    
+    <!-- EXO : 
+     si le codeCours est égal à NG = 'VOus avez choisi Formation Angular'
+     Sinon.... REACT = ... 'React'
+     Sinon .... VUE = 'Vue'
+     Autre = 'Choisir une formation' -->
+
+     <!-- à faire avec soit *ngIf/SwitchCase
+      ou alors le control flow avec @if() -->
+      <p></p>
  
+      <div class="alert alert-warning">
    
+          @if (codeCours==="NG") {
+          <span>Vous avez choisi Angular</span>
+          }
+          @else if (codeCours==="REACT") {
+          <span>Vous avez choisi React</span>
+          }
+          @else if (codeCours==="VUE") {
+          <span>Vous avez choisi Vue</span>
+          }
+          @else {
+          <span>Choisissez une formation</span>
+          }
+   
+      </div>
+      
+<p>autre solution de code</p>
+
+<div [ngSwitch]="codeCours">
+    <div *ngSwitchCase="'NG'">Angular</div>
+    <div *ngSwitchCase="'react'">React</div>
+    <div *ngSwitchCase="'Vue'">Vue</div>
+    <div *ngSwitchDefault="">Choisir une formation</div>
+</div>
+
+<!-- Double way Binding -->
 </div>
