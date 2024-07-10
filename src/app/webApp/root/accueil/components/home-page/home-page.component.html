@@ -5,7 +5,7 @@
     <button class="btn btn-primary" (click)="methodClic()">
         Cliquez pour tester le single way binding...
     </button>
-
+      <p>{{result}}</p>
     
     <!-- EXO : 
      si le codeCours est égal à NG = 'VOus avez choisi Formation Angular'
@@ -15,7 +15,7 @@
 
      <!-- à faire avec soit *ngIf/SwitchCase
       ou alors le control flow avec @if() -->
-      <p></p>
+
  
       <div class="alert alert-warning">
    
@@ -34,13 +34,13 @@
    
       </div>
       
-<p>autre solution de code avec switchCase</p>
+<p>autre solution de code avec switchCase : </p>
 
 <div [ngSwitch]="codeCours">
     <div *ngSwitchCase="'NG'">Angular</div>
     <div *ngSwitchCase="'react'">React</div>
     <div *ngSwitchCase="'Vue'">Vue</div>
-    <div *ngSwitchDefault="">Choisir une formation</div>
+    <div *ngSwitchDefault>Choisir une formation</div>
 </div>
 
 <!-- Double way Binding
