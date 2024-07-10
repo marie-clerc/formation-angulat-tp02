@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Dives } from '../class/dives';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { delay, map, tap } from 'rxjs';
 
 // décorateur 
 @Injectable({
@@ -25,6 +25,25 @@ export class DivesService {
     // const API_URL = 'https://dev.webjs.fr/dives.json'
 
     return this._http.get<Dives[]>(API_URL)
-    
+    .pipe(
+      // le pipe encapsule(wrappe) tous les opérateurs RxJS
+      tap(
+        // opérateur de débug
+        (responseHTTP:any) => {
+          console.log('Depuis le service : ', responseHTTP);
+          
+        }
+      ),
+      delay(4000),
+      map(
+        (data:Dives[]) => {
+          return data.filter(
+            (datum:Dives) => {
+              return datum.id >=3;
+            }
+          )
+        }
+      )
+    )
   }
 }
