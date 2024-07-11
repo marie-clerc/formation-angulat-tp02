@@ -13,7 +13,10 @@
                 <button 
                 class="btn btn-primary" 
                 #btnPlus
-                routerLink="/liste-des-plongées/details/{{dive.id}}">
+                routerLink="/liste-des-plongées/details/{{dive.id}}"
+                [queryParams]="dive"
+                [skipLocationChange]="true"
+                >
                 En Savoir Plus
             </button>
             </div>

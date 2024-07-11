@@ -10,7 +10,9 @@ const routes: Routes = [
   { path:'liste-des-plongées', component:DivesListComponent},
   // nouveau path pour avoir le detail quand user click btn sur page liste-des-plongées
   // ':' c'est le paramètrequ'on veut faire passer dans un url
-  {path:'liste-des-plongées/details/:paramURL', component:DivesDetailComponent},
+  {path:'liste-des-plongées/details/:id',
+    // path:'liste-des-plongées/details/:param',
+    component:DivesDetailComponent},
   
   
   // ** tous les paths non repertoriés
