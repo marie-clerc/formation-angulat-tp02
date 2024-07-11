@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 export class DivesListComponent implements OnInit, OnDestroy, AfterViewInit, AfterViewChecked {
   // 1- props
   public dives:Dives[] = [];
+  public InfosTexte:string='Formation Angular'
 
   private subData:Subscription = new Subscription();
 

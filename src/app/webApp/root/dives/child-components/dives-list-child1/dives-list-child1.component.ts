@@ -12,5 +12,6 @@ export class DivesListChild1Component {
   // @Inout et les @Output permettent d'établir la communication entre comp parent et enfant(s)
   // ils se définissent tjs dans l'enfant 
   @Input() inputDive!:Dives
+  @Input() infos!:string
 
 }
