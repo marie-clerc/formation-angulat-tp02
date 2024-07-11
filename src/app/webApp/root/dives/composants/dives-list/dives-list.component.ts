@@ -16,6 +16,9 @@ export class DivesListComponent implements OnInit, OnDestroy, AfterViewInit, Aft
 
   private subData:Subscription = new Subscription();
 
+  public panier:Dives[] =[];
+
+
   // ViewChild ne marche que sur le 1et element de la colection
   @ViewChild('btnPlus') eltBtn!:ElementRef<HTMLElement>
   // @ViewChild('btnPlus') eltBtn!:ElementRef<HTMLButtonElement>;
@@ -91,5 +94,21 @@ export class DivesListComponent implements OnInit, OnDestroy, AfterViewInit, Aft
 
   public diveSelected  = (e:any) => {
     console.log('Depuis le parent : ', e);
+    
+    if (e.paramIsChecked) {
+          this.panier.push(e.paramDive);
+          console.table(this.panier);
+        }
+        else {
+          let keyPanier = this.panier.indexOf(e.paramDive);
+          if (keyPanier >= 0) {
+            this.panier.splice(keyPanier, 1);
+            console.table(this.panier);
+          }
+        }    
+ 
   }
+
+  
+  
 }
