@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Dives } from '../../../../../shared/class/dives';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-dives-detail',
@@ -19,6 +20,8 @@ export class DivesDetailComponent implements OnInit {
     // constructor
     constructor(
       private _routeActive:ActivatedRoute,
+      private _router: Router,
+      private _location:Location,
     ){}
 
     ngOnInit(): void {
@@ -50,4 +53,27 @@ export class DivesDetailComponent implements OnInit {
     )
     }
 
+    //----------
+
+    // méthodes différentes de routage
+    public goBack =() => {
+      this._router.navigateByUrl('liste-des-plongées')
+    }
+   
+    public goBack2 =() => {
+      this._location.back()   
+     }
+
+     public goHome() {
+      this._router.navigate(
+        [''], // path invocé
+        {
+          // extra ou option 
+          queryParams:{
+            from:'dives-details',
+            time:1000
+          }
+        }
+       )
+    }
 }

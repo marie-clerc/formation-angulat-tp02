@@ -1,5 +1,10 @@
 <h5 class="=text-primary">{{title}}</h5>
 
+<button class="btn btn-danger" routerLink="/liste-des-plongées">RouterLink</button>
+<button class="btn btn-warning" (click)="goBack()">Go Back</button>
+<button class="btn btn-warning" (click)="goBack2()">Go Back2</button>
+<button class="btn btn-success" (click)="goHome()">Go Home</button>
+
 <p class="alert alert-primary">Nom : {{dive.name}}</p>
 <p class="alert alert-primary">Description :  {{dive.description}}</p>
 <p class="alert alert-primary">Latitude : {{dive.latitude}} </p>
