@@ -88,4 +88,8 @@ export class DivesListComponent implements OnInit, OnDestroy, AfterViewInit, Aft
     )
   }
   // 4- méthodes
+
+  public diveSelected  = (e:any) => {
+    console.log('Depuis le parent : ', e);
+  }
 }
