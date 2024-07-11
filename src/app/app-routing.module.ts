@@ -3,14 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './webApp/root/accueil/components/home-page/home-page.component';
 import { DivesListComponent } from './webApp/root/dives/composants/dives-list/dives-list.component';
 import { Page404Component } from './shared/components/page404.component';
+import { DivesDetailComponent } from './webApp/root/dives/composants/dives-detail/dives-detail.component';
 
 const routes: Routes = [
-  { path:'', component: HomePageComponent}, //www.domain.tld
+  { path:'', component: HomePageComponent, title: 'home'}, // title = seo
   { path:'liste-des-plongées', component:DivesListComponent},
+  // nouveau path pour avoir le detail quand user click btn sur page liste-des-plongées
+  // ':' c'est le paramètrequ'on veut faire passer dans un url
+  {path:'liste-des-plongées/details/:paramURL', component:DivesDetailComponent},
+  
   
   // ** tous les paths non repertoriés
   // { path: '**', redirectTo:''}
-  {path:'**', component:Page404Component}
+  // doit toujours être en dernier
+  {path:'**', component:Page404Component},
 ];
 
 @NgModule({
