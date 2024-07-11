@@ -7,6 +7,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { FormsModule } from '@angular/forms';
 import { DivesModule } from '../dives/dives.module';
 import { RouterModule } from '@angular/router';
+// import { CompteClientModule } from '../../compte-client/compte-client.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,10 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     RouterModule,
     // nos propres modules
-    DivesModule
+    DivesModule,
+    // pour faire le lien entre compte-client (enfant) à accueil (parent)
+    // CompteClientModule,
+    
   ],
   exports : [
     LandingPageComponent
