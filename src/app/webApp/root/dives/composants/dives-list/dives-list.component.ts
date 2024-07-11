@@ -92,21 +92,20 @@ export class DivesListComponent implements OnInit, OnDestroy, AfterViewInit, Aft
   }
   // 4- méthodes
 
-  public diveSelected  = (e:any) => {
+  public diveSelected = (e: any) => {
     console.log('Depuis le parent : ', e);
-    
     if (e.paramIsChecked) {
-          this.panier.push(e.paramDive);
-          console.table(this.panier);
-        }
-        else {
-          let keyPanier = this.panier.indexOf(e.paramDive);
-          if (keyPanier >= 0) {
-            this.panier.splice(keyPanier, 1);
-            console.table(this.panier);
-          }
-        }    
- 
+      this.panier.push(e.paramDive);
+      console.table(this.panier);
+    }
+    else {
+      let keyPanier = this.panier.indexOf(e.paramDive);
+      if (keyPanier >= 0) {
+        this.panier.splice(keyPanier, 1);
+        console.table(this.panier);
+      }
+    }
+
   }
 
   
